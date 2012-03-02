@@ -3,7 +3,6 @@
 1. Add com/tsukurusha/phonegap/plugins/ScreenOrientation.java to your src folder.
 
 2. Add the following line to res/xml/plugins.xml.
-
 <code>&lt;plugin name="ScreenOrientation" value="com.tsukurusha.phonegap.plugins.ScreenOrientation" /&gt;</code>
 
 3. Import www/pg-plugin-screen-orientation.js into your html file like:
