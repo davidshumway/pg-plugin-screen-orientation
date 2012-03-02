@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ScreenOrientation PhoneGap Plugin Sample</title>
+        <meta charset="utf-8">
+        <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+        <script type="text/javascript" charset="utf-8" src="pg-plugin-screen-orientation.js"></script>
+    </head>
+    <body>
+        <h1>ScreenOrientation PhoneGap Plugin Sample</h1>
+
+        <!-- Please refer to http://developer.android.com/reference/android/R.attr.html#screenOrientation for detail of each orientation parameters. -->
+
+        <input type="button" onclick="navigator.screenOrientation.set('landscape');return false;" value="Landscape" />
+        <input type="button" onclick="navigator.screenOrientation.set('portrait');return false;" value="Portrait" />
+        <input type="button" onclick="navigator.screenOrientation.set('sensorLandscape');return false;" value="Sensor Landscape" />
+        <input type="button" onclick="navigator.screenOrientation.set('sensorPortrait');return false;" value="Sensor Portrait" />
+        <input type="button" onclick="navigator.screenOrientation.set('reverseLandscape');return false;" value="Reverse Landscape" />
+        <input type="button" onclick="navigator.screenOrientation.set('reversePortrait');return false;" value="Reverse Portrait" />
+        <input type="button" onclick="navigator.screenOrientation.set('fullSensor');return false;" value="Full Sensor" />
+    </body>
+</html>
