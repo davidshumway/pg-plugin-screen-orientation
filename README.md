@@ -1,5 +1,9 @@
 # Screen Orientation PhoneGap Plugin for Android
 
+This PhoneGap Plugin for Android can lock/unlock the screen orientation.
+
+## How to install
+
 1. Add com/tsukurusha/phonegap/plugins/ScreenOrientation.java to your src folder.
 
 2. Add the following line to res/xml/plugins.xml.
