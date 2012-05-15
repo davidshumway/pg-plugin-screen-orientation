@@ -1,13 +1,11 @@
 package com.tsukurusha.phonegap.plugins;
 
 import org.json.JSONArray;
-import org.json.JSONException;
-
+import android.app.Activity;
 import android.content.pm.ActivityInfo;
 
 import com.phonegap.api.Plugin;
 import com.phonegap.api.PluginResult;
-import com.phonegap.api.PluginResult.Status;
 
 public class ScreenOrientation extends Plugin {
     // Refer to http://developer.android.com/reference/android/R.attr.html#screenOrientation
@@ -29,34 +27,35 @@ public class ScreenOrientation extends Plugin {
 	public PluginResult execute(String action, JSONArray args, String callbackId) {
     	if (action.equals("set")) {
     		String orientation = args.optString(0);
+    		Activity activity = (Activity)this.ctx;
     		if (orientation.equals(UNSPECIFIED)) {
-    			this.ctx.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
+    		    activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
     		} else if (orientation.equals(LANDSCAPE)) {
-    			this.ctx.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+    			activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     		} else if (orientation.equals(PORTRAIT)) {
-    			this.ctx.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+    			activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     		} else if (orientation.equals(USER)) {
-    			this.ctx.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER);
+    			activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER);
     		} else if (orientation.equals(BEHIND)) {
-    			this.ctx.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_BEHIND);
+    			activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_BEHIND);
     		} else if (orientation.equals(SENSOR)) {
-    			this.ctx.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+    			activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
     		} else if (orientation.equals(NOSENSOR)) {
-    			this.ctx.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
+    			activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
     		} else if (orientation.equals(SENSOR_LANDSCAPE)) {
-    			this.ctx.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
+    			activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
     		} else if (orientation.equals(SENSOR_PORTRAIT)) {
-    			this.ctx.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
+    			activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
     	    } else if (orientation.equals(REVERSE_LANDSCAPE)) {
-    			this.ctx.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE);
+    			activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE);
     		} else if (orientation.equals(REVERSE_PORTRAIT)) {
-    			this.ctx.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT);
+    			activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT);
     		} else if (orientation.equals(FULL_SENSOR)) {
-    			this.ctx.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR);
+    			activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR);
     		}
-    		return new PluginResult(Status.OK);
+    		return new PluginResult(PluginResult.Status.OK);
     	} else {
-    		return new PluginResult(Status.INVALID_ACTION);
+    		return new PluginResult(PluginResult.Status.INVALID_ACTION);
     	}
 	}
 }
