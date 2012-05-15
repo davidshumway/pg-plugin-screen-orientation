@@ -9,8 +9,8 @@ This PhoneGap Plugin for Android can lock/unlock the screen orientation.
 2. Add the following line to res/xml/plugins.xml.
 <code>&lt;plugin name="ScreenOrientation" value="com.tsukurusha.phonegap.plugins.ScreenOrientation" /&gt;</code>
 
-3. Import www/pg-plugin-screen-orientation.js into your html file like:
-<code>&lt;script type="text/javascript" charset="utf-8" src="pg-plugin-screen-orientation.js&gt;&lt;/script&gt;</code>
+3. Add pg-plugin-screen-orientation.js to your assets/www folder and import it into your html file like:
+<code>&lt;script type="text/javascript" charset="utf-8" src="pg-plugin-screen-orientation.js"&gt;&lt;/script&gt;</code>
 
 4. The javascript interface is as follows:
 
