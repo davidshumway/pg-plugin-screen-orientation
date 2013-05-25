@@ -1,4 +1,4 @@
-# Could someone become the maintainer of this project? I could transfer the ownership of the repo. Recently I don't have much time to work with Cordova.
+## Could someone become the maintainer of this project? I could transfer the ownership of the repo. Recently I don't have much time to work with Cordova.
 
 # Screen Orientation PhoneGap Plugin for Android
 
