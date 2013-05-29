@@ -4,8 +4,8 @@ import org.json.JSONArray;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 
-import com.phonegap.api.Plugin;
-import com.phonegap.api.PluginResult;
+import org.apache.cordova.api.Plugin;
+import org.apache.cordova.api.PluginResult;
 
 public class ScreenOrientation extends Plugin {
     // Refer to http://developer.android.com/reference/android/R.attr.html#screenOrientation
@@ -27,7 +27,7 @@ public class ScreenOrientation extends Plugin {
 	public PluginResult execute(String action, JSONArray args, String callbackId) {
     	if (action.equals("set")) {
     		String orientation = args.optString(0);
-    		Activity activity = (Activity)this.ctx;
+    		Activity activity = cordova.getActivity();
     		if (orientation.equals(UNSPECIFIED)) {
     		    activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
     		} else if (orientation.equals(LANDSCAPE)) {
