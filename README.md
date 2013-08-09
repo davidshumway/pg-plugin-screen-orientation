@@ -1,3 +1,5 @@
+# Updated to use with Cordova 2.5
+
 # Screen Orientation PhoneGap Plugin for Android
 
 This PhoneGap Plugin for Android can lock/unlock the screen orientation.
