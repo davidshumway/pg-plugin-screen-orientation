@@ -1,13 +1,16 @@
 package com.tsukurusha.phonegap.plugins;
 
+import org.apache.cordova.api.CallbackContext;
+import org.apache.cordova.api.CordovaPlugin;
+import org.apache.cordova.api.PluginResult;
 import org.json.JSONArray;
+import org.json.JSONException;
+
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 
-import com.phonegap.api.Plugin;
-import com.phonegap.api.PluginResult;
 
-public class ScreenOrientation extends Plugin {
+public class ScreenOrientation extends CordovaPlugin {
     // Refer to http://developer.android.com/reference/android/R.attr.html#screenOrientation
 
     private static final String UNSPECIFIED = "unspecified";
@@ -23,11 +26,12 @@ public class ScreenOrientation extends Plugin {
     private static final String REVERSE_PORTRAIT = "reversePortrait";
     private static final String FULL_SENSOR = "fullSensor";
 
-	@Override
-	public PluginResult execute(String action, JSONArray args, String callbackId) {
+    @Override
+	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
     	if (action.equals("set")) {
     		String orientation = args.optString(0);
-    		Activity activity = (Activity)this.ctx;
+    		
+    		Activity activity = this.cordova.getActivity();
     		if (orientation.equals(UNSPECIFIED)) {
     		    activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
     		} else if (orientation.equals(LANDSCAPE)) {
@@ -53,9 +57,10 @@ public class ScreenOrientation extends Plugin {
     		} else if (orientation.equals(FULL_SENSOR)) {
     			activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR);
     		}
-    		return new PluginResult(PluginResult.Status.OK);
+    		return true;
     	} else {
-    		return new PluginResult(PluginResult.Status.INVALID_ACTION);
+    		return false;
     	}
 	}
 }
+
