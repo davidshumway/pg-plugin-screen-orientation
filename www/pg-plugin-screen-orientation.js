@@ -1,6 +1,17 @@
-var screenOrientation = function() {}
+cordova.define("cordova/plugin/screenOrientation",
+  function(require, exports, module) {
+    var exec = require("cordova/exec");
+    var ScreenOrientation = function() {};
 
-screenOrientation.prototype.set = function(str, success, fail) {
-	cordova.exec(null, null, "ScreenOrientation", "set", [str]);
-};
-navigator.screenOrientation = new screenOrientation();
+    ScreenOrientation.prototype.set = function(str, success, fail) {
+      cordova.exec(null, null, "ScreenOrientation", "set", [str]);
+    };
+
+    var screenOrientation = new ScreenOrientation();
+
+    module.exports = screenOrientation;
+});
+
+if (!navigator.screenOrientation) {
+    navigator.screenOrientation = cordova.require("cordova/plugin/screenOrientation");
+}
