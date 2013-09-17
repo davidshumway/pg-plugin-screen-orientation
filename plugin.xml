@@ -1,4 +1,4 @@
-<plugin id="com.phonegap.plugins.video" version="0.2.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+<plugin id="com.tsukurusha.phonegap.plugins" version="0.2.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
     <name>ScreenOrientation</name>
     <description>Screen Orientation PhoneGap Plugin for Android</description>
     <license>Apache 2.0</license>
